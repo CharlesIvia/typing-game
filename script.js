@@ -68,7 +68,10 @@ const levels = {
 
 let currentLevel = levels.easy;
 
-let timeCount = currentLevel + 1;
+let timeCount = currentLevel + 1,
+  scoreCount = 0,
+  isPlaying,
+  wordDislayed;
 
 //Query the dom
 
@@ -97,4 +100,19 @@ function init() {
   setInterval(countdown, 1000);
   //check game status every 0.1 sec
   setInterval(checkStatus, 100);
+}
+
+function showWord() {
+  let randomIndex = Math.floor(Math.random() * words.length);
+  wordDislayed = words[randomIndex];
+  currentWord.textContent = wordDislayed;
+}
+
+function countdown() {
+  if (timeCount > 0) {
+    timeCount--;
+    timeLeft.textContent = timeCount;
+  } else if (timeCount === 0) {
+    isPlaying = false;
+  }
 }
