@@ -124,3 +124,16 @@ function checkStatus() {
     message.className = "mt-3 text-danger";
   }
 }
+
+function startMatch() {
+  if (this.value === wordDislayed) {
+    isPlaying = true;
+    message.textContent = "Correct!";
+    message.className = "mt-3 text-success";
+    this.value = "";
+    scoreCoun++;
+    score.textContent = scoreCount;
+    timeCount = currentLevel + 1; //reset clock
+    showWord();
+  }
+}
