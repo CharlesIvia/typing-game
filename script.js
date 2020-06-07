@@ -61,11 +61,23 @@ let words = [
 ];
 
 const levels = {
-    easy: 10,
-    medium: 7,
-    hard: 4,
-}
+  easy: 10,
+  medium: 7,
+  hard: 4,
+};
 
 let currentLevel = levels.easy;
 
 let timeCount = currentLevel + 1;
+
+//Query the dom
+
+let currentWord = document.querySelector("#current-word");
+
+inputWord = document.querySelector("#input-word");
+time = document.querySelector("#seconds");
+timeLeft = document.querySelector("#time-left");
+score = document.querySelector("#score");
+message = document.querySelector("#difficulty");
+
+
