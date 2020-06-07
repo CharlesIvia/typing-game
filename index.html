@@ -9,10 +9,11 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css">
     <title>Learn | Typing</title>
   </head>
   <body class="bg-dark text-white">
-    <header class="bg-info p-3 mb-5 text-center">
+    <header class="bg-secondary p-3 mb-5 text-center">
       <h1>Type like a Pro</h1>
     </header>
 
@@ -22,13 +23,13 @@
         <div class=".col-md-6 mx-auto">
           <p>
             Type the following word in
-            <span id="seconds" class="text-warning"></span>seconds:
+            <span id="seconds" class="text-warning"></span> seconds:
           </p>
           <!--increased font size-->
           <h2 id="current-word" class="display-2 mb-4"></h2>
 
-          <div class="form-group col-md-4 mx-auto">
-            <label for="difficulty">Difficulty</label>
+          <div class="form-group col-md-3 mx-auto">
+            <label for="difficulty">Difficulty Level</label>
             <select id="difficulty" class="form-control">
               <option>Easy</option>
               <option>Medium</option>
@@ -39,23 +40,23 @@
           <input
             type="text"
             id="input-word"
-            class="form-control form-control-lg"
+            class="form-control-input col-md-8 mx-auto form-control-lg-7 p-3 "
             placeholder="Start typing..."
             autofocus
           />
           <h4 id="message" class="mt-3 text-warning"></h4>
           <div class="row mt-3">
-            <div class="col-md-6">
+            <div class="col-md-7">
               <h3>Time Left: <span id="time-left">0</span></h3>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-3">
               <h3>Score: <span id="score">0</span></h3>
             </div>
           </div>
 
           <!--Instructions-->
           <div class="row mt-4">
-            <div class="col-md-10 mx-auto">
+            <div class="col-md-7 mx-auto" class="instructions">
               <div class="card card-body bg-secondary">
                 <h4>Instructions</h4>
                 <p>

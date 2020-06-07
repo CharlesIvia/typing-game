@@ -1,0 +1,21 @@
+body {
+  font-size: 22px;
+}
+
+.instructions {
+  align-items: center;
+  text-align: center;
+  width: 20vw;
+}
+
+footer {
+    margin-top:25vh;
+}
+
+.form-control-input {
+    font-size: 32px;
+}
+
+#difficulty {
+    font-size: 25px;
+}
