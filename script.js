@@ -86,7 +86,7 @@ difficultyLevel = document.querySelector("#difficulty");
 
 //Create event listeners
 
-windows.addEventListener("load", init);
+window.addEventListener("load", init);
 inputWord.addEventListener("input", startMatch);
 difficultyLevel.addEventListener("change", changeLevel);
 
@@ -135,5 +135,29 @@ function startMatch() {
     score.textContent = scoreCount;
     timeCount = currentLevel + 1; //reset clock
     showWord();
+  }
+}
+
+function changeLevel() {
+  let level = this.options[this.selectedIndex].value;
+  if (level === "Medium") {
+    inputWord.focus();
+    scoreCount = 0;
+    message.textContent = "";
+    isPlaying = true;
+    currentLevel = levels.medium;
+    time.textContent = currentLevel;
+    timeCount = currentLevel + 1;
+    startMatch();
+  }
+  if (level === "Hard") {
+    inputWord.focus();
+    scoreCount = 0;
+    message.textContent = "";
+    isPlaying = true;
+    currentLevel = levels.hard;
+    time.textContent = currentLevel;
+    timeCount = currentLevel + 1;
+    startMatch();
   }
 }
