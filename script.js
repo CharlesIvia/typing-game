@@ -59,3 +59,13 @@ let words = [
   "polarizing",
   "validate",
 ];
+
+const levels = {
+    easy: 10,
+    medium: 7,
+    hard: 4,
+}
+
+let currentLevel = levels.easy;
+
+let timeCount = currentLevel + 1;
