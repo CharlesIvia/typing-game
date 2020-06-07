@@ -1,6 +1,4 @@
-//Goal- Load random words, show high score
-
-//Words to type
+//Declare variables
 
 let words = [
   "magic",
@@ -61,83 +59,71 @@ let words = [
 ];
 
 const levels = {
-  easy: 10,
-  medium: 7,
-  hard: 4,
+  easy: 7,
+  medium: 5,
+  hard: 3,
 };
-
 let currentLevel = levels.easy;
-
 let timeCount = currentLevel + 1,
   scoreCount = 0,
   isPlaying,
-  wordDislayed;
+  wordDisplayed;
 
-//Query the dom
+let currentWord = document.querySelector("#current-word"),
+  inputWord = document.querySelector("#input-word"),
+  time = document.querySelector("#seconds"),
+  timeLeft = document.querySelector("#time-left"),
+  score = document.querySelector("#score"),
+  message = document.querySelector("#message"),
+  difficultyLevel = document.querySelector("#difficulty");
 
-let currentWord = document.querySelector("#current-word");
-
-inputWord = document.querySelector("#input-word");
-time = document.querySelector("#seconds");
-timeLeft = document.querySelector("#time-left");
-score = document.querySelector("#score");
-message = document.querySelector("#message");
-difficultyLevel = document.querySelector("#difficulty");
-
-//Create event listeners
-
+// EVENT LISTENERS
 window.addEventListener("load", init);
 inputWord.addEventListener("input", startMatch);
 difficultyLevel.addEventListener("change", changeLevel);
 
-//Helper fns
-
+// FUCNTIONS
 function init() {
   time.textContent = currentLevel;
   showWord();
-
-  //Call countdown fn every sec
+  // call the countdown function every second
   setInterval(countdown, 1000);
-  //check game status every 0.1 sec
+  // cheking the game status every 0.1s
   setInterval(checkStatus, 100);
 }
-
 function showWord() {
   let randomIndex = Math.floor(Math.random() * words.length);
-  wordDislayed = words[randomIndex];
-  currentWord.textContent = wordDislayed;
+  wordDisplayed = words[randomIndex];
+  currentWord.textContent = wordDisplayed;
 }
-
 function countdown() {
   if (timeCount > 0) {
+    // console.log(timeCount);
     timeCount--;
     timeLeft.textContent = timeCount;
   } else if (timeCount === 0) {
     isPlaying = false;
   }
 }
-
 function checkStatus() {
   if (!isPlaying && timeCount === 0) {
-    message.textContent = "Time Up!";
+    message.textContent = "Time Up!!";
     scoreCount = 0;
     message.className = "mt-3 text-danger";
   }
 }
-
 function startMatch() {
-  if (this.value === wordDislayed) {
+  if (this.value === wordDisplayed) {
     isPlaying = true;
-    message.textContent = "Correct!";
+    message.textContent = "Correct!!";
     message.className = "mt-3 text-success";
     this.value = "";
-    scoreCoun++;
+    scoreCount++;
     score.textContent = scoreCount;
-    timeCount = currentLevel + 1; //reset clock
+    timeCount = currentLevel + 1; // will reset the clock to start the countdown again
     showWord();
   }
 }
-
 function changeLevel() {
   let level = this.options[this.selectedIndex].value;
   if (level === "Medium") {
