@@ -78,6 +78,13 @@ inputWord = document.querySelector("#input-word");
 time = document.querySelector("#seconds");
 timeLeft = document.querySelector("#time-left");
 score = document.querySelector("#score");
-message = document.querySelector("#difficulty");
+message = document.querySelector("#message");
+difficultyLevel = document.querySelector("#difficulty");
+
+//Create event listeners
+
+windows.addEventListener("load", init);
+inputWord.addEventListener("input", startMatch);
+difficultyLevel.addEventListener("change", changeLevel);
 
 
