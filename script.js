@@ -87,4 +87,14 @@ windows.addEventListener("load", init);
 inputWord.addEventListener("input", startMatch);
 difficultyLevel.addEventListener("change", changeLevel);
 
+//Helper fns
 
+function init() {
+  time.textContent = currentLevel;
+  showWord();
+
+  //Call countdown fn every sec
+  setInterval(countdown, 1000);
+  //check game status every 0.1 sec
+  setInterval(checkStatus, 100);
+}
