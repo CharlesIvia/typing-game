@@ -116,3 +116,11 @@ function countdown() {
     isPlaying = false;
   }
 }
+
+function checkStatus() {
+  if (!isPlaying && timeCount === 0) {
+    message.textContent = "Time Up!";
+    scoreCount = 0;
+    message.className = "mt-3 text-danger";
+  }
+}
