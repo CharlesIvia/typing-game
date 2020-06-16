@@ -59,7 +59,7 @@ let words = [
 ];
 
 const levels = {
-  easy: 7,
+  easy: 10,
   medium: 5,
   hard: 3,
 };
@@ -75,7 +75,7 @@ let currentWord = document.querySelector("#current-word"),
   timeLeft = document.querySelector("#time-left"),
   score = document.querySelector("#score"),
   message = document.querySelector("#message"),
-  difficultyLevel = document.querySelector("#difficulty");
+  difficultyLevel = document.querySelector("#difficulty-level");
 
 // EVENT LISTENERS
 window.addEventListener("load", init);
