@@ -146,4 +146,14 @@ function changeLevel() {
     timeCount = currentLevel + 1;
     startMatch();
   }
+  if (level === "Easy") {
+    inputWord.focus();
+    scoreCount = 0;
+    message.textContent = "";
+    isPlaying = true;
+    currentLevel = levels.easy;
+    time.textContent = currentLevel;
+    timeCount = currentLevel + 1;
+    startMatch();
+  }
 }
